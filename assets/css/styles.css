@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Helvetica Neue', sans-serif;
   background-color: #000;
@@ -40,6 +44,11 @@ body {
   color: gold;
 }
 
+.logo-link {
+  color: gold;
+  text-decoration: none;
+}
+
 /* Navbar */
 .navbar {
   display: flex;
@@ -59,7 +68,8 @@ body {
   transition: color 0.3s;
 }
 
-.navbar a:hover {
+.navbar a:hover,
+.navbar a.active {
   color: gold;
 }
 
@@ -80,7 +90,7 @@ body {
 
 /* Cart Icon */
 .cart-icon {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
@@ -93,26 +103,33 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .overlay {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 3rem;
   border-radius: 8px;
-  text-align: center;
 }
 
-.btn {
+/* General Button */
+.btn,
+.cta-btn,
+.shop-link {
   background-color: gold;
   color: black;
   padding: 1rem 2rem;
   font-weight: bold;
   text-decoration: none;
   border-radius: 5px;
+  display: inline-block;
   transition: background 0.3s;
+  font-size: 1rem;
 }
 
-.btn:hover {
+.btn:hover,
+.cta-btn:hover,
+.shop-link:hover {
   background-color: #e0c200;
 }
 
@@ -126,63 +143,98 @@ body {
   gap: 1rem;
 }
 
-.cta-btn {
-  background-color: gold;
-  border: none;
-  color: black;
-  font-size: 1rem;
-  padding: 0.8rem 1.5rem;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s;
-}
-
-.cta-btn:hover {
-  background-color: #e0c200;
-}
-
-/* Collections */
-.collections {
+/* Collections and Product Grids */
+.collections,
+.page-header {
   padding: 3rem 2rem;
   text-align: center;
 }
 
-.collections h2 {
+.collections h2,
+.page-header h1 {
   color: gold;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.collections p,
+.page-header p {
+  color: #ccc;
   margin-bottom: 2rem;
+  font-size: 1.1rem;
 }
 
 .collection-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
 .collection-card {
+  background-color: #111;
   border: 1px solid gold;
   padding: 1.5rem;
   border-radius: 8px;
-  background-color: #111;
+  text-align: center;
 }
 
 .collection-card h3 {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
 }
 
-.shop-link {
+/* About Page */
+.about-section {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-section h1 {
+  color: gold;
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+}
+
+.about-section p {
+  color: #ccc;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Contact Page */
+.contact-section {
+  padding: 3rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-section input,
+.contact-section textarea {
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.contact-section button {
   background-color: gold;
   color: black;
-  padding: 0.6rem 1.2rem;
-  text-decoration: none;
-  display: inline-block;
   font-weight: bold;
-  border-radius: 4px;
+  border: none;
+  padding: 0.8rem;
+  cursor: pointer;
 }
 
-.shop-link:hover {
+.contact-section button:hover {
   background-color: #e0c200;
 }
 
@@ -194,6 +246,7 @@ footer {
   padding: 1.5rem;
   border-top: 1px solid gold;
   font-size: 0.9rem;
+  margin-top: 3rem;
 }
 
 /* Responsive */
@@ -222,6 +275,7 @@ footer {
 
   .hero {
     height: 70vh;
+    padding: 2rem;
   }
 
   .overlay {
@@ -230,5 +284,33 @@ footer {
 
   .collection-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-section,
+  .contact-section {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .btn,
+  .cta-btn,
+  .shop-link {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .collections h2,
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .collections p,
+  .page-header p {
+    font-size: 1rem;
   }
 }
