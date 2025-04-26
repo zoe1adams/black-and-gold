@@ -40,6 +40,12 @@ body {
   color: gold;
 }
 
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
 .navbar ul {
   display: flex;
   gap: 1.5rem;
@@ -57,6 +63,22 @@ body {
   color: gold;
 }
 
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: gold;
+  transition: all 0.3s;
+}
+
+/* Cart Icon */
 .cart-icon {
   font-size: 1.2rem;
   cursor: pointer;
@@ -177,9 +199,25 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
   .navbar ul {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #111;
     flex-direction: column;
-    gap: 0.8rem;
-    text-align: center;
+    width: 200px;
+    padding: 1rem 0;
+    gap: 1rem;
+    display: none;
+    border: 1px solid gold;
+    border-radius: 8px;
+  }
+
+  .navbar ul.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
   }
 
   .hero {
