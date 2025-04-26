@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Your Brand | Hair Bundles</title>
   <link rel="stylesheet" href="../assets/css/styles.css" />
-  <script defer src="../assets/js/script.js"></script>
 </head>
 <body>
 
@@ -16,11 +15,14 @@
 
   <!-- Header -->
   <header class="main-header">
-    <div class="logo"><a href="../index.html" style="color: gold; text-decoration: none;">Your Brand</a></div>
+    <div class="logo">
+      <a href="../index.html" class="logo-link">Your Brand</a>
+    </div>
+
     <nav class="navbar">
       <ul>
         <li><a href="../index.html">Home</a></li>
-        <li><a href="bundles.html" style="color: gold;">Bundles</a></li>
+        <li><a href="bundles.html" class="active">Bundles</a></li>
         <li><a href="closures.html">Closures</a></li>
         <li><a href="frontals.html">Frontals</a></li>
         <li><a href="wigs.html">Wigs</a></li>
@@ -28,13 +30,20 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <div class="cart-icon">🛒</div>
   </header>
 
   <!-- Page Header -->
   <section class="collections">
     <h2>Luxury Hair Bundles</h2>
-    <p style="color: #ccc;">Premium virgin hair bundles available in various textures and lengths.</p>
+    <p>Premium virgin hair bundles available in various textures and lengths.</p>
 
     <div class="collection-grid">
       <!-- Bundle 1 -->
@@ -71,6 +80,16 @@
   <footer>
     <p>&copy; 2025 Your Brand. All rights reserved.</p>
   </footer>
+
+  <!-- Hamburger Toggle Script -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.navbar ul');
+
+    hamburger?.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>
